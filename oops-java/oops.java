@@ -27,6 +27,15 @@ class Student{//by connvension, class name always starts with capital letter whi
     public void study(){
         System.out.println(name + " is studying");
     }
+
+    Student(Student s1){ //copy constructor
+        this.name = s1.name;
+        this.age = s1.age;
+        this.grade = s1.grade;
+    }  
+    Student(){
+
+    } 
 }
 
 
@@ -36,11 +45,15 @@ public class oops{
         pen1.color = "Blue";
         pen1.type = "Gel";
 
-        pen1.write();
+        // pen1.write();
 
         Student s1 = new Student();
-        s1.name = "Alice";
+        s1.name = "Balu";
         s1.age = 20;
-        s1.printInfo();
+        s1.grade = 3;
+        // s1.printInfo();
+
+        Student s2 = new Student(s1);//copy constructor
+        s2.printInfo();
     }
 }
